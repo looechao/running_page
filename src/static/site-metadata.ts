@@ -16,8 +16,8 @@ const getBasePath = () => {
 
 const data: ISiteMetadataResult = {
   siteTitle: 'Running Page',
-  siteUrl: 'https://looechao.github.io',
-  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+  siteUrl: 'https://looechao.github.io/running_page/',
+  logo: 'https://raw.githubusercontent.com/looechao/looechao.github.io/refs/heads/main/images/profile.png',
   description: 'Personal site and blog',
   navLinks: [
     {
@@ -26,7 +26,7 @@ const data: ISiteMetadataResult = {
     },
     {
       name: 'Blog',
-      url: 'https://github.com/yihong0618/gitblog',
+      url: 'https://looechao.com',
     },
     {
       name: 'About',
