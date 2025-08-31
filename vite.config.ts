@@ -94,6 +94,10 @@ export default defineConfig({
     outDir: './dist', // for user easy to use, vercel use default dir -> dist
     rollupOptions: {
       output: {
+        // Ensure file hashing for cache busting
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: (id: string) => {
           if (id.includes('node_modules')) {
             return 'vendors';
