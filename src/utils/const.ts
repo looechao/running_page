@@ -51,7 +51,7 @@ const SHOW_ELEVATION_GAIN = false;
 const RICH_TITLE = false;
 
 // IF you are outside China please make sure IS_CHINESE = false
-const IS_CHINESE = true;
+const IS_CHINESE = false;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength: number, year: string): string => {
   const yearStr = year === 'Total' ? '所有' : ` ${year} `;
@@ -168,56 +168,54 @@ const dark_vanilla = 'rgb(228,212,220)';
 // issues #92 and #198
 export const NEED_FIX_MAP = false;
 export const MAIN_COLOR = nike;
-export const PROVINCE_FILL_COLOR = '#47b8e0';
-export const COUNTRY_FILL_COLOR = dark_vanilla;
+export const PROVINCE_FILL_COLOR = '#666666';
+export const COUNTRY_FILL_COLOR = '#ffffff';
 
 // Static color constants
-export const RUN_COLOR_LIGHT = '#47b8e0';
+export const RUN_COLOR_LIGHT = '#666666';
 export const RUN_COLOR_DARK = MAIN_COLOR;
 
 // Single run animation colors
-export const SINGLE_RUN_COLOR_LIGHT = '#52c41a'; // Green for light theme
+export const SINGLE_RUN_COLOR_LIGHT = '#666666'; // Gray for light theme
 export const SINGLE_RUN_COLOR_DARK = '#ff4d4f'; // Red for dark theme
 
 // Helper function to get theme-aware RUN_COLOR
 export const getRuntimeRunColor = (): string => {
-  if (typeof window === 'undefined') return RUN_COLOR_DARK;
+  if (typeof window === 'undefined') return RUN_COLOR_LIGHT;
 
   const dataTheme = document.documentElement.getAttribute('data-theme');
   const savedTheme = localStorage.getItem('theme');
 
-  // Determine current theme (default to dark)
+  // Determine current theme (default to light)
   const isDark =
     dataTheme === 'dark' ||
-    (!dataTheme && savedTheme === 'dark') ||
-    (!dataTheme && !savedTheme);
+    (!dataTheme && savedTheme === 'dark');
 
   return isDark ? RUN_COLOR_DARK : RUN_COLOR_LIGHT;
 };
 
 // Helper function to get theme-aware SINGLE_RUN_COLOR
 export const getRuntimeSingleRunColor = (): string => {
-  if (typeof window === 'undefined') return SINGLE_RUN_COLOR_DARK;
+  if (typeof window === 'undefined') return SINGLE_RUN_COLOR_LIGHT;
 
   const dataTheme = document.documentElement.getAttribute('data-theme');
   const savedTheme = localStorage.getItem('theme');
 
-  // Determine current theme (default to dark)
+  // Determine current theme (default to light)
   const isDark =
     dataTheme === 'dark' ||
-    (!dataTheme && savedTheme === 'dark') ||
-    (!dataTheme && !savedTheme);
+    (!dataTheme && savedTheme === 'dark');
 
   return isDark ? SINGLE_RUN_COLOR_DARK : SINGLE_RUN_COLOR_LIGHT;
 };
 
 // Legacy export for backwards compatibility
-export const RUN_COLOR = '#47b8e0';
-export const RUN_TRAIL_COLOR = 'rgb(255,153,51)';
-export const CYCLING_COLOR = 'rgb(51,255,87)';
-export const HIKING_COLOR = 'rgb(151,51,255)';
-export const WALKING_COLOR = HIKING_COLOR;
-export const SWIMMING_COLOR = 'rgb(255,51,51)';
+export const RUN_COLOR = '#666666';
+export const RUN_TRAIL_COLOR = '#666666';
+export const CYCLING_COLOR = '#666666';
+export const HIKING_COLOR = '#666666';
+export const WALKING_COLOR = '#666666';
+export const SWIMMING_COLOR = '#666666';
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
