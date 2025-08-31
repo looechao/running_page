@@ -125,7 +125,9 @@ export const useTheme = () => {
   // Initialize theme from localStorage or default to light
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'light';
-    return (localStorage.getItem('theme') as Theme) || 'light';
+    // Force reset to light theme - temporary fix for cache issue
+    localStorage.setItem('theme', 'light');
+    return 'light';
   });
 
   /**
